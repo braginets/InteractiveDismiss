@@ -25,4 +25,6 @@ dismissInteractively(with: sender) {
 
 4. __Done.__
 
+![](animation.gif)
+
 
