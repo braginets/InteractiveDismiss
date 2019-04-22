@@ -9,10 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
 		let btn = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize.init(width: 50, height: 50)))
 		btn.addTarget(self, action: #selector(ViewController.openModalView), for: .touchDown)
 		btn.setTitle("OPEN", for: .normal)
@@ -21,14 +21,14 @@ class ViewController: UIViewController {
 		btn.center = view.center
 		// Do any additional setup after loading the view.
 	}
-
-
+	
+	
 	@objc func openModalView() {
 		let vc = ModalViewController()
 		vc.modalTransitionStyle = .coverVertical
 		vc.modalPresentationStyle = .overCurrentContext
 		present(vc, animated: true, completion: nil)
 	}
-
+	
 }
 

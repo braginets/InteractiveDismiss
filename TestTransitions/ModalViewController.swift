@@ -35,7 +35,7 @@ class ModalViewController: UIViewController, InteractiveDismissing {
 	@objc func closeModalView() {
 		dismiss(animated: true, completion: nil)
 	}
-
+	
 	var animator: UIViewPropertyAnimator?
 
 	@objc func didTrackPanGesture(sender: UIPanGestureRecognizer) {

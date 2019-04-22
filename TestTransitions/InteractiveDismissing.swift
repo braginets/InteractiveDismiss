@@ -20,7 +20,7 @@ extension InteractiveDismissing {
 	func dismissInteractively(with sender: UIPanGestureRecognizer, onCompletion completion: (() -> ())?) {
 
 		guard let view = sender.view else { return }
-
+		let threshold: CGFloat = 0.3
 
 		let translation = sender.translation(in: view)
 		let progress = translation.y / view.bounds.height
@@ -28,11 +28,9 @@ extension InteractiveDismissing {
 		switch sender.state {
 
 		case .began:
-
 			self.animator = UIViewPropertyAnimator(duration: 0.3, curve: .easeOut, animations: {
 				view.transform = CGAffineTransform.identity.translatedBy(x: 0, y: view.bounds.height)
 			})
-
 			animator?.startAnimation()
 			animator?.pauseAnimation()
 			animator?.addCompletion { position in
@@ -45,28 +43,24 @@ extension InteractiveDismissing {
 				default:
 					()
 				}
-
 			}
 
 		case .changed:
 			animator?.fractionComplete = progress
 
 		case .ended:
+			guard let animator = animator else { return }
 
-			guard let animatorProgress = animator?.fractionComplete else { return }
-
-			if animatorProgress < 0.3 {
-
-				animator?.isReversed = true
-				animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0.3)
-
+			if animator.fractionComplete < threshold {
+				animator.isReversed = true
+				animator.startAnimation()
 			} else {
-				animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0.3)
+				animator.startAnimation()
 			}
 
 		case .cancelled, .failed:
 			animator?.isReversed = true
-			animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0.3)
+			animator?.startAnimation()
 
 		default:
 			()
