@@ -49,14 +49,11 @@ extension InteractiveDismissing {
 			animator?.fractionComplete = progress
 
 		case .ended:
-			guard let animator = animator else { return }
 
-			if animator.fractionComplete < threshold {
-				animator.isReversed = true
-				animator.startAnimation()
-			} else {
-				animator.startAnimation()
+			if let complete = animator?.fractionComplete, complete < threshold {
+				animator?.isReversed = true
 			}
+			animator?.startAnimation()
 
 		case .cancelled, .failed:
 			animator?.isReversed = true
