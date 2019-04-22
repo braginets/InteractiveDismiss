@@ -1,6 +1,6 @@
 #  Simple Interactive Transitions using UIViewPropertyAnimator
 
-gives us amazing tool to make UIView animations interactive.
+UIViewPropertyAnimator gives us amazing tool to make UIView animations interactive.
 this project is simple experiment, feel free to extend and customize
 
 1. Copy `InteractiveDismissing` class to your project
