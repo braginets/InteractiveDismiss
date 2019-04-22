@@ -1,7 +1,7 @@
 #  Simple Interactive Transitions using UIViewPropertyAnimator
 
-UIViewPropertyAnimator gives us amazing tool to make UIView animations interactive.
-this project is simple experiment, feel free to extend and customize
+Since iOS10 UIViewPropertyAnimator gives us an amazing tool to make UIView animations interactive.
+this project is simple experiment, feel free to extend and customize - it is very simple!
 
 1. Copy `InteractiveDismissing` class to your project
 2. Conform ypour modal viewciontroller to the `InteractiveDismissing` protocol
