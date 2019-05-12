@@ -16,9 +16,9 @@ class ModalViewController: UIViewController, InteractiveDismissing {
 
 		view.backgroundColor = UIColor.lightGray
 
-		let btn = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize.init(width: 60, height: 50)))
+		let btn = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize.init(width: 300, height: 50)))
 		btn.addTarget(self, action: #selector(ModalViewController.closeModalView), for: .touchDown)
-		btn.setTitle("CLOSE", for: .normal)
+		btn.setTitle("Drag down to dismiss", for: .normal)
 
 		view.addSubview(btn)
 		btn.center = view.center
