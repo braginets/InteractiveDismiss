@@ -1,3 +1,5 @@
+[DEPRECEATED] Since iOS13 this is build-int feature
+
 #  Simple Interactive Transitions using UIViewPropertyAnimator
 
 Since iOS10 UIViewPropertyAnimator gives us an amazing tool to make UIView animations interactive.
