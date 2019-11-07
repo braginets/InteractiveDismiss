@@ -1,4 +1,4 @@
-[DEPRECEATED] Since iOS13 this is build-int feature
+[DEPRECEATED] Since iOS13 this is build-in feature
 
 #  Simple Interactive Transitions using UIViewPropertyAnimator
 
